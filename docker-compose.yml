@@ -1,0 +1,11 @@
+services:
+  piped-opengraph:
+    container_name: piped-opengraph
+    # image:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      FRONTEND_URL: https://piped.example.com
+      BACKEND_URL: https://pipedapi.example.com
+    restart: unless-stopped
